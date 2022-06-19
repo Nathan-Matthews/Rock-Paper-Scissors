@@ -43,6 +43,7 @@ function playRound(playerSelection, computerSelection){
 
 
     }
+    tieRound = true;
     return "Hmmm.. Something went very wrong here.....";
 }
 function game(){
