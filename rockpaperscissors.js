@@ -1,6 +1,5 @@
 let playerScore = 0;
 let computerScore = 0;
-let tieRound = false;
 
 function computerPlay(){
 
@@ -43,26 +42,20 @@ function playRound(playerSelection, computerSelection){
 
 
     }
-    tieRound = true;
     return "Hmmm.. Something went very wrong here.....";
 }
 function game(){
     let playerChoice;
     let finalStatement = 'ERROR';
 
-    for(let i = 0; i < 5; i++){
+    while (playerScore < 5 && computerScore < 5){
         playerChoice = prompt("Please enter your choice: 'Rock', 'Paper', or 'Scissors'")
         console.log(playRound(playerChoice, computerPlay()));
-        if(computerScore >= 3){
+        if(computerScore >= 5){
             finalStatement = "The computer has bested you. Git gud..."
         }
-        if(playerScore >= 3){
+        if(playerScore >= 5){
             finalStatement = "Huzzah! You've defeated the computer!"
-        }
-        // If there is a tie, another round needs to be played.
-        if(tieRound == true){
-            tieRound = false;
-            i--;
         }
     }   
     computerScore = 0;
